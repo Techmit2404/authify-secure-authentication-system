@@ -49,6 +49,61 @@ This architecture ensures clear separation of concerns between the user interfac
 - Secure environment variable usage
 - Input validation and error handling
 
+# Setup Instructions
+Follow these steps to run your project locally
+### 1. Clone the Repository
+``bash
+git clone https://github.com/Techmit2404/authify-secure-authentication-system.git
+
+cd authify-secure-authentication-system
+
+### 2. Install backend dependencies
+cd backend
+
+npm install
+
+### 3. Configure environment variables
+Create a .env file inside the backend folder:
+
+PORT=5000
+
+DB_HOST=localhost
+
+DB_USER=postgres
+
+DB_PASSWORD=yourpassword
+
+DB_NAME=authify
+
+JWT_SECRET=your_jwt_secret
+
+### 4. Setup PostgreSQL database
+Create the database:
+
+CREATE DATABASE authify;
+
+### 5. Start backend server and open frontend
+For backend to start:
+
+npm start
+
+The server will run on:
+http://localhost:5000
+
+Open the following file in your browser to load frontend:
+
+frontend/login.html
+
+### 6. Admin Access
+
+To access admin features:
+
+Assign the admin role to a user in the database
+
+Login using that account
+
+Open the admin panel from the dashboard
+
 # Security Implementation
 
 Authify is designed with a strong focus on securing user data and protecting authentication workflows against common security threats.
