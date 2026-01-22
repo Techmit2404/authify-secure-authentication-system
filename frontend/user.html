@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <header class="dashboard-header">
+    <div class="nav-left">
+      <strong>Authify</strong>
+    </div>
+
+    <div class="nav-icons">
+      <button title="Dashboard">Dashboard</button>
+      <button title="Toggle Dark Mode" onclick="toggleDarkMode()">🌗</button>
+      <button title="Settings" onclick="toggleSettings()">⚙️Settings</button>
+      <button title="Logout" onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <main class="dashboard-content">
+
+    <!-- Weather Card -->
+    <div class="card ui-card">
+      <img id="weatherImage" class="card-image" src="morning.png">
+
+      <div class="card-body">
+        <h3 id="weatherTitle">Good Morning</h3>
+
+        <p id="weatherText">
+          A fresh morning brings clarity, energy, and new opportunities.The world wakes in a soft glow of pink and gold,
+          where the crisp air and dew-tipped grass offer a moment of pure, unwritten stillness before the day begins.The
+          morning is not just a change in light, but a fresh invitation to see the world—and yourself—with brand new
+          eyes. </p>
+
+        <div class="card-footer">
+          <div class="author">
+            <img src="https://i.pravatar.cc/40" class="author-avatar">
+            <span>Weather System</span>
+          </div>
+
+          <button class="card-btn">Read More</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Settings Panel -->
+    <div class="settings-popup" id="settingsPopup">
+      <h4>Settings</h4>
+      <p><strong>Dark Mode:</strong> <span id="darkStatus">Off</span></p>
+      <p><strong>Session:</strong> <span id="sessionTimer">00:00</span></p>
+      <button class="close-btn" onclick="toggleSettings()">Close</button>
+    </div>
+
+  </main>
+
+  <script src="js/app.js"></script>
+  <script>
+    protectPage("user");
+    loadProfile();
+  </script>
+</body>
+
+</html>

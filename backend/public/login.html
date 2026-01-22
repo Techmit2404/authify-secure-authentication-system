@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+:root {
+  --green: #22ff99;
+  --dark: #05080d;
+  --panel: #0b1118;
+  --glow: rgba(34,255,153,0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Orbitron", monospace;
+}
+
+body {
+  background: radial-gradient(circle, #0a0f14, #000);
+  color: var(--green);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* HUD PANEL */
+.hud-panel {
+  width: 420px;
+  background: var(--panel);
+  border: 1px solid var(--green);
+  box-shadow: 0 0 25px var(--glow);
+  padding: 30px;
+  position: relative;
+}
+
+/* ANGLED CORNERS */
+.hud-panel::before,
+.hud-panel::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 2px solid var(--green);
+}
+
+.hud-panel::before {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.hud-panel::after {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+.hud-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.hud-subtitle {
+  text-align: center;
+  font-size: 11px;
+  opacity: 0.7;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.input-group input {
+  width: 100%;
+  background: #000;
+  border: 1px solid var(--green);
+  color: var(--green);
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.login-btn {
+  width: 100%;
+  background: var(--green);
+  color: #000;
+  padding: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.login-btn:hover {
+  background: #00cc7a;
+}
+
+.hud-link {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--green);
+  text-decoration: none;
+  display: block;
+}
+
+.alert {
+  border: 1px solid red;
+  color: red;
+  padding: 8px;
+  margin-top: 10px;
+  font-size: 11px;
+}
+
+  </style>
+  <title>System Access</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="hud-panel">
+
+  <div class="hud-title">IDENTIFY AND AUTHENTICATE</div>
+  <div class="hud-subtitle">SYSTEM ACCESS PROTOCOL</div>
+
+  <div class="input-group">
+    <label>OPERATOR ID (EMAIL)</label>
+    <input type="email" id="email">
+  </div>
+
+  <div class="input-group">
+    <label>SECURITY KEY (PASSWORD)</label>
+    <input type="password" id="password">
+  </div>
+
+  <button class="login-btn" onclick="login()">
+    INITIATE SECURE LOGIN
+  </button>
+
+  <div id="msg"></div>
+
+  <a class="hud-link" href="register.html">
+    NEW OPERATOR? REQUEST ACCESS
+  </a>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

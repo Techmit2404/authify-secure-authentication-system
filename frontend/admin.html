@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="dashboard-page">
+
+  <header class="dashboard-header">
+    <div class="nav-left">
+      <strong>Admin Panel</strong>
+    </div>
+
+    <div class="nav-icons">
+      <button onclick="toggleDarkMode()">🌗</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <main class="dashboard-content">
+
+    <!-- Welcome Card -->
+    <div class="card ui-card admin-card">
+      <img class="card-image" src="https://cdn-icons-png.flaticon.com/512/1828/1828479.png">
+
+      <div class="card-body">
+        <h3>Welcome, Admin</h3>
+        <p>You have administrative access to manage and monitor the system.</p>
+
+        <div class="card-footer">
+          <div class="author">
+            <img src="https://i.pravatar.cc/40?img=12" class="author-avatar">
+            <span>System Control</span>
+          </div>
+
+          <button class="card-btn">Admin Access</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Users -->
+    <div class="tables-container">
+
+      <div class="table-box">
+        <h2>Registered Users</h2>
+        <table id="usersTable">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="table-box">
+        <h2>Activity Logs</h2>
+        <table id="logsTable">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Action</th>
+              <th>Status</th>
+              <th>Role</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="js/app.js"></script>
+  <script>
+    protectPage("admin");
+    loadUsers();
+    loadLogs();
+  </script>
+
+</body>
+
+</html>
