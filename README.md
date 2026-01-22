@@ -117,6 +117,15 @@ If a user forgets their password, a reset request is initiated. A secure reset p
 
 To maintain secure sessions, expired tokens can be refreshed using a controlled token renewal process without requiring repeated logins.
 
+# Security Workflow
+
+- Passwords are hashed using bcrypt  
+- JWT tokens are issued on successful login  
+- Role-based access controls admin routes  
+- Password reset uses time-limited tokens  
+- Input validation prevents injection attacks  
+- Activity logs track user actions  
+
 # Database Design
 
 Authify uses PostgreSQL as a primary database for secure and reliable data storage.
